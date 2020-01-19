@@ -1,0 +1,66 @@
+<!-- Анимация зонной диаграммы и ВАХ 
+     p-n перехода при прямом и обратном напряжении
+     Напряжение изменяется слайдером
+     Цвета для анимации можно задать через HTML или напрямую
+     в соответсвующие переменные вверху js файла
+
+     Tarasov  2019  MISiS                       
+-->
+<head>
+    <title>P-N ПЕРЕХОД</title>
+    <!--href = путь к css файлу (навание если в одной директории с html)-->
+    <link rel="stylesheet" type="text/css" href="Animation.css">
+    <!--
+        src = путь к js файлу (навание если в одной директории с html)
+
+        Если анимация не запускается, попробуйте поместить эту строчку 
+        перед закрытием тега  <body>
+    -->
+    <script src="Animation.js"></script>
+</head> 
+<body>
+<!--Контейнер с двумя анимациями-->
+<div id="animation">
+    <!--Зонная диаграмма и слайдер-->
+      <div id="wire"></div>
+    
+    <!-- slider value 150 == 0 volts-->
+    <div id="input"><input type="range" class="slider" min="80" max="180" value="150" aria-label="Voltage"/></div>
+    <p class="voltage" id = 'voltsI' > <span class="voltsI">0</span> В</p> 
+    
+    <!--Зонная картинка. Высота и ширина связаны с картинкой. Не менять. -->
+    <div id="graph1">
+        <canvas id="electrons"></canvas>
+        <canvas class="p" class='n'></canvas>
+        <canvas id="canvas1" width="500px"; height= "500px";></canvas>
+    </div>
+
+    <!-- ВАХ и подписи -->
+    <div id="graph2">
+        <canvas id="canvas2" width="400px";  height= "400px";></canvas>
+        <p class="diod"> p-n Diode </p>
+        <p class ="smechenie1" id="smechenie1">Смещение <span  id="smechenie" class="smechenie2">отсутствует</span></p>
+        <p class ="voltage" id="voltsII"><span class="voltsII">0</span> В</p> 
+    </div>
+
+
+    <!--Цвета для анимации--> 
+    <div id='vahPointFill' style="color:palevioletred;"></div>
+    <div id='vahPointBorder' style="color:black;"></div>
+    <div id='vahAxes' style="color:black;"></div>
+    <div id='vahLine' style="color:skyblue;"></div>  
+    <div id='electrons_nn' style="color:skyblue;"></div>
+    <div id='electrons_nn_border' style="color:black;"></div>    
+    <div id='electrons_np' style="color:aqua;"></div>
+    <div id='electrons_np_border' style="color:black;"></div>   
+    <div id='holes_pp' style="color:pink;"></div>
+    <div id='holes_pp_border' style="color:black;"></div>
+    <div id='holes_pn' style="color:hotpink;"></div>
+    <div id='holes_pn_border' style="color:#454545;"></div>
+    <style> #canvas1{background-color:whitesmoke;}</style>
+    <div id='opz_lines' style="color:black;"></div>
+    <div id='fermi_level' style="color:black;"></div>
+    <div id='Eg_border' style="color:gray;"></div>
+    <div id='Eg_fill' style="color:floralwhite;"></div>
+</div>  
+</body>

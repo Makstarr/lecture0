@@ -1,0 +1,158 @@
+/*   Анимация зонной диаграммы и ВАХ 
+     p-n перехода при прямом и обратном напряжении
+     Напряжение изменяется слайдером
+
+     Tarasov  2019  MISiS                        */
+
+#animation
+{
+  position: relative; 
+  top:10px;
+  left: 10px;
+}
+#input
+{
+  position: absolute;
+  top: 80px;
+  left: 150px;
+  z-index: 2; 
+}
+.slider 
+{
+  width: 300px;
+  height: 40px;
+  border: 3px solid black;
+  border-radius: 0.1em ;  
+  /*Градиент на слайдере выглядит забавно*/
+  /*background-image: linear-gradient(90deg, black, white, black);*/ 
+  box-shadow: inset 0 0 0.05em rgba(0, 0, 0, 0.6);
+  -webkit-appearance: none;
+          appearance: none;
+}
+.slider::-webkit-slider-thumb 
+{
+  
+  width: 50px;
+  height: 45px;
+  border-radius: 0.08em; 
+  background-image: radial-gradient(#eee, #ccc);    
+  filter: drop-shadow(0.02em 0.02em 0.02em rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
+}
+.slider::-moz-range-thumb
+{
+  border-radius: 0.08em; 
+  background-image: radial-gradient(#eee, #bbb);    
+  filter: drop-shadow(0.02em 0.02em 0.02em rgba(0, 0, 0, 0.5));
+  cursor: pointer;
+  border: none;
+  -moz-appearance: none;
+       appearance: none;
+}
+.smechenie1
+{ position: absolute;
+  font-size: 30px;
+  font-weight:400; 
+  z-index: 3;
+  top: 80px;
+  width: 800px;
+}
+.diod
+{
+  top: 0px;
+  font-size: 40px;
+  font-weight: 400;
+  z-index: 3; 
+}
+#graph1   
+{
+  position: absolute;
+  left: 50px;
+  top: 200px;
+}
+#wire
+{ position: absolute;
+  z-index: 1;
+  top: 100px;
+  left: 35px;
+  width: 550px;
+  height: 300px;
+  border: 3px solid black;
+}
+.voltage 
+{
+  position: absolute;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 0.45em;
+  color: #111;
+  text-shadow: 0.02em 0.02em 0.02em rgba(0, 0, 0, 0.1);
+}
+#voltsII
+{ 
+  z-index: 3;
+  left: 80px;
+  top: 300px;
+}
+#voltsI
+{
+  top: 140px;
+  left: 300px;
+}
+.canvas1
+{
+  top: 210px;
+}
+#electrons
+{
+  position: absolute;
+  top:10px;
+  left:12px;
+ /*border: 2px solid red;*/
+ /*transition: 0.5s;*/
+  z-index:5;
+}
+.p
+{
+  position: absolute;
+  top:0px;
+   width:500px;
+   height:20px;
+  left:8px;
+
+ /*transition: 0.5s;*/
+  z-index: 10;
+}
+/*Не менять  размер*/
+#canvas1
+{ 
+  position: absolute;
+  z-index: 2; 
+  width: 500px;
+  height: 500px;
+  border: 2px solid black;
+  margin: 10px;
+}
+#graph2 
+{ position: absolute;
+  top: 110px;
+  left:700px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 100vh;
+}
+/*Не менять  размер*/
+#canvas2
+{ 
+  position: absolute;
+  top: 200px;
+  z-index: 2; 
+  background-color: white;
+  width: 400px;
+  height: 400px;
+  border: 2px solid black;
+}
